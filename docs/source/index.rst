@@ -19,3 +19,4 @@ Contents
    usage
    resources
    contact
+   license
