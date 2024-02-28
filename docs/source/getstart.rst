@@ -1,16 +1,17 @@
-Usage
+Getting Started
 =====
 
 .. _installation:
 
-Installation
+💻 Getting Started
 ------------
 
-whatsupp
+
+Clone the repository
 
 .. code-block:: console
 
-   (.venv) $ pip install lumache
+   git clone https://github.com/Discovery-Limited/Discovery-Limited.git
 
 Creating recipes
 ----------------

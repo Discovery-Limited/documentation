@@ -16,6 +16,6 @@ Contents
 
 .. toctree::
 
-   usage
+   Installation
    api
    theprojectidea
