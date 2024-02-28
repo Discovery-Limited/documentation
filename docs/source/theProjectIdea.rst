@@ -1,4 +1,4 @@
-The Scope of the Project
+The Project Idea
 ===
 
 test123
