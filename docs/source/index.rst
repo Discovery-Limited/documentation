@@ -1,4 +1,4 @@
-Welcome to Lumache's documentation!
+Discover Limited Documentation
 ===================================
 
 Our project involves the development of a shared workspace application tailored for both students and businesses.
@@ -19,3 +19,5 @@ Contents
    usage
    resources
    contact
+   resources
+   license
