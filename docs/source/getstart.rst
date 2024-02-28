@@ -11,4 +11,7 @@ Clone the repository
 
    git clone https://github.com/Discovery-Limited/Discovery-Limited.git
 
+.. autosummary::
+   :toctree: generated
 
+   discoveria

@@ -9,4 +9,4 @@ List of resources that have helped develop our project
 .. autosummary::
    :toctree: generated
 
-   lumache
+   discoveria
