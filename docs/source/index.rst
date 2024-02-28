@@ -20,3 +20,4 @@ Contents
    resources
    contact
    license
+   getstart
