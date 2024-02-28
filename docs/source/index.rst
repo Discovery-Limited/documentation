@@ -18,8 +18,5 @@ Contents
 
 .. toctree::
 
-   scope
-   user requirements
-   implementation
-   set up
-   main components of project
+   usage
+   api
