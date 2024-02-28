@@ -16,8 +16,8 @@ Contents
 
 .. toctree::
 
-   usage
-   resources
-   contact
-   license
    getstart
+   contact
+   resources
+   license
+  
