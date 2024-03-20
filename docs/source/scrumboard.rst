@@ -37,3 +37,6 @@ Next Steps
 Now that you have a basic understanding of the Scrum Board, you can start customizing it to fit your project's specific needs. Add additional columns, define task card templates, and explore integrations with other project management tools.
 
 Happy Scrumming!
+
+.. autosummary::
+   :toctree: generated
