@@ -17,8 +17,8 @@ Contents
 .. toctree::
 
    getstart
-   specification
    loginAndRegister
+   userView
    contact
    resources
    license
