@@ -1,139 +1,59 @@
-Log In and Register Page
-=====
+Login and Register JavaScript Files Documentation
+==================================================
 
-An explanation of the functions used in the log in and the sign up pages. 
+Introduction
+------------
+The login.js and register.js files contain JavaScript code responsible for implementing client-side validation and interaction logic for the login and registration forms in a web application. These files ensure that user inputs are validated before submission and provide real-time feedback to users regarding the validity of their inputs.
 
-.. code-block:: javascript
+login.js
+--------
 
-    function validateLogin() {
-        if (email.value.length == 0 && password.value.length == 0 ) {
-            button.style.cursor = 'not-allowed';
-            button.style.opacity = (0.4);
-        } else if(email.value == '' && password.value == ''){
-            button.style.cursor = 'not-allowed';
-            button.style.opacity = (0.4);
-        } else if (password.value.length >= 8 && email.value != '' ) {
-            button.style.opacity = (1);
-            button.style.cursor = 'pointer';
-        } else {
-            button.style.cursor = 'not-allowed';
-            button.style.opacity = (0.4);
-        }
-    }
+This file is responsible for handling the login form validation and interaction logic.
 
-The validateLogin() function is called on key down for the email and password input fields.
-This function prevents the user from clicking on the 'log in' button if the inputs do not meet the requirements, which is if any of the fields are left empty.
+Functions:
+1. **validateLogin()**:
+   - Description: Validates the login form inputs (email and password) and enables/disables the submit button based on the validity of the inputs.
+   - Steps:
+     - Checks if both email and password fields are empty.
+     - If the password length is greater than or equal to 8 characters and the email field is not empty, enables the submit button.
+     - Otherwise, disables the submit button.
 
-.. code-block:: javascript
+register.js
+-----------
 
-    function checkUsername() {
-        const rules = {
-            length: username.value.length > 4,
-            specialChar: /[!@#$%^&*(),.?";':{}|<>]/.test(username.value)
-        };
-        
-        const messages = [];
-        if (!rules.length) messages.push("Username must be longer than 4 characters.");
-        if (rules.specialChar) messages.push("Username must not contain special character.");
-        if (messages.length === 0) {
-            usernameFeedback.style.display = 'none';
-            usernameChecked = true;
-        } else {
-            usernameFeedback.style.display = 'block';
-            usernameFeedback.innerHTML = messages.join('<br>');
-            usernameChecked = false;
-        }
-        handleForm();
-    }
+This file manages the validation and interaction logic for the registration form.
 
-The checkUsername() function is called on key up on the username input field.
-If the username meets the requirements, which is to have more than 4 characters and not contain any special characters, then usernameChecked will be set to true.
-If the username does not meet the requirements, then usernameChecked is set to false. Also, a message stating that the username entered is not valid and the reason why will be displayed below the username input field.
+Functions:
+1. **checkUsername()**:
+   - Description: Validates the username field in the registration form and provides feedback to the user.
+   - Steps:
+     - Checks if the username length is greater than 4 characters and does not contain any special characters.
+     - Displays appropriate error messages if validation fails.
 
+2. **checkEmail()**:
+   - Description: Validates the email field in the registration form.
+   - Steps:
+     - Checks if the email contains the '@' symbol.
+     - Displays an error message if validation fails.
 
-.. code-block:: javascript
+3. **checkPassword()**:
+   - Description: Validates the password field in the registration form and provides feedback to the user.
+   - Steps:
+     - Validates password complexity based on length, presence of uppercase/lowercase letters, numbers, and special characters.
+     - Displays appropriate error messages if validation fails.
+     - Checks if the password matches the confirmation password and displays an error message if they do not match.
 
-    function checkEmail() {
-        const emailVal = email.value;
-        if (!emailVal.includes('@')) {
-            emailFeedback.style.display = 'block';
-            emailChecked = false;
+4. **handleForm()**:
+   - Description: Enables/disables the submit button based on the validity of username, email, and password inputs.
+   - Steps:
+     - Enables the submit button if all inputs pass validation.
+     - Disables the submit button if any input fails validation.
 
-        } else {
-            emailFeedback.style.display = 'none';
-            emailChecked = true;
-        }
-        handleForm();
-    }
-The checkEmail() function is called on key up on the email input field.
-The function checks if the input contains the '@' symbol, and sets the 'emailChecked' variable to true if it does.
+File Structure
+--------------
+- `login.js`: JavaScript file for login form validation and interaction logic.
+- `register.js`: JavaScript file for registration form validation and interaction logic.
 
-
-.. code-block:: javascript
-
-    function checkPassword(event) {
-        const placeholder = event.target.placeholder;
-
-        if (placeholder === "Password") {
-            const rules = {
-                length: password.value.length > 8,
-                uppercase: /[A-Z]/.test(password.value),
-                lowercase: /[a-z]/.test(password.value),
-                number: /\d/.test(password.value),
-                specialChar: /[£~`!@#$%^&*(),.?";':{}|<>]/.test(password.value)
-            };
-            
-            const messages = [];
-            if (!rules.length) messages.push("Password must be longer than 8 characters.");
-            if (!rules.uppercase) messages.push("Password must contain at least one uppercase letter.");
-            if (!rules.lowercase) messages.push("Password must contain at least one lowercase letter.");
-            if (!rules.number) messages.push("Password must contain at least one number.");
-            if (!rules.specialChar) messages.push("Password must contain at least one special character.");
-            if (messages.length === 0) {
-                passwordFeedback.style.display = 'none';
-                if (confirmPassword.value.length > 0) {
-                    if (password.value !== confirmPassword.value) {
-                        confirmFeedback.style.display = 'block'
-                        passwordChecked = false;
-        
-                    } else {
-                        confirmFeedback.style.display = 'none';
-                        passwordChecked = true;
-                    }
-                }
-            } else {
-                passwordFeedback.style.display = 'block';
-                passwordFeedback.innerHTML = messages.join('<br>');
-                passwordChecked = false;
-            }
-            return;     
-        }
-        if (password.value !== confirmPassword.value) {
-            confirmFeedback.style.display = 'block'
-            passwordChecked = false;
-
-        } else {
-            confirmFeedback.style.display = 'none';
-            passwordChecked = true;
-
-        }
-        handleForm();
-    }
-
-The checkPassword() function is called on key up on the password and confirm password input fields.
-The password must contain an uppercase letter, a lowercase letter, a number, a special character, and be longer than 8 characters.
-If the password entered does not meet any of these requirements, a message below the password input will notify the user on which requirement(s) the password does not meet.
-
-.. code-block:: javascript
-
-    function handleForm() {
-        if (usernameChecked && emailChecked && passwordChecked) {
-            submitForm.classList.add("active");
-            return submitForm.disabled = false;
-        }
-        submitForm.classList.remove("active");
-        submitForm.disabled = true;
-    }
-
-The handleForm() function is called at the end of each of the input check functions for signing up.
-When all the inputs meet the requirements, the user will be able to click on the 'sign up' button to successfully create their account.
+Conclusion
+----------
+The login.js and register.js files play a crucial role in ensuring the security and usability of the login and registration forms in the web application. By providing real-time validation feedback and enforcing input requirements, these files enhance the user experience and help prevent invalid data submissions.
