@@ -1,4 +1,4 @@
-📋 Resources
+Resources
 ============
 
 List of resources that have helped develop our project

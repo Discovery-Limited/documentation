@@ -1,4 +1,4 @@
-📧 Contact
+Contact
 ===========
 
 David - up2049418@myport.ac.uk
