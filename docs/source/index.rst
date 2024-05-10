@@ -16,11 +16,12 @@ Contents
 
 .. toctree::
 
-   getstart
    loginAndRegister
    userView
-   contact
+   developers
    resources
    license
    scrumboard
+   projects
+   deadlines
   
